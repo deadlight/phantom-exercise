@@ -1,0 +1,13 @@
+{% extends 'ghosts/_base.html' %}
+
+{% block banner %}
+All ghosts
+{% endblock %}
+
+{% block content %}
+<ul>
+    {% for ghost in ghosts %}
+    <li>{{ ghost.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

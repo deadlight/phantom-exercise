@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Ghost
 
-# Register your models here.
+@admin.register(Ghost)
+class GhostAdmin(admin.ModelAdmin):
+    pass
