@@ -8,14 +8,14 @@ All ghosts
   <ul class="list">
     {% for ghost in ghosts %}
       <li class="list__item">
-          <div class="list__content">
+        <div class="list__content">
           {% if ghost.user %}
             <h2>{{ ghost.first_name }} "{{ ghost.name }}" {{ ghost.last_name }}</h2>
           {% else %}
             <h2>{{ ghost.name }}</h2>
-            <p class="subtitle">{{ ghost.origin }}</p>
-            <p>{{ ghost.description }}</p>
           {% endif%}
+          <p class="subtitle">{{ ghost.origin }}</p>
+          <p>{{ ghost.description }}</p>
         </div>
       </li>
     {% endfor %}

@@ -1,0 +1,20 @@
+{% extends 'ghosts/_base.html' %}
+{% load socialaccount %}
+
+{% block banner %}
+  {{ selected_name }}
+{% endblock %}
+
+{% block content %}
+  <div class="content-wrapper">
+    <p>{{ selected_name }} will be your new Phantom name. Do you want to save your choice?</p>
+    <form method="POST">
+      {% csrf_token %}
+      <input type="hidden" name="first-name" value="{{ first_name }}">
+      <input type="hidden" name="last-name" value="{{ last_name }}">
+      <input type="hidden" name="ghost" value="{{ ghost }}">
+      <button class="button" type="submit" name="confirm" value="no">No</button>
+      <button class="button" type="submit" name="confirm" value="yes">Yes</button>
+    </form>
+  </div>
+{% endblock %}

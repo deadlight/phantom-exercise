@@ -1,0 +1,23 @@
+{% extends 'ghosts/_base.html' %}
+{% load socialaccount %}
+
+{% block banner %}
+Your Phantom name
+{% endblock %}
+
+{% block content %}
+  <div class="content-wrapper">
+    {% if user.is_authenticated %}
+      <p>Firstly, enter you boring, human name...</p>
+      <form action="/select-ghost/" method="POST">
+        {% csrf_token %}
+        <p><label for="first-name">First name:</label><br><input name="first-name" value=""></p>
+        <p><label for="last-name">Last name:</label><br><input name="last-name" value=""></p>
+        <input type="submit" class="button" value="Make it spookier">
+      </form>
+    {% else %}
+      <p>To use the Phantom name picker, you must first login with a Google account:</p>
+      <a href="{% provider_login_url 'google' %}" class="button">Login with Google</a>
+    {% endif %}
+  </div>
+{% endblock %}

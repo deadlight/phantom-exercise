@@ -19,6 +19,9 @@ from ghosts import views
 
 urlpatterns = [
     path('', views.ghost_list),
+    path('get-name/', views.name_form),
+    path('select-ghost/', views.select_ghost),
+    path('confirm/', views.confirm_ghost),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
 ]

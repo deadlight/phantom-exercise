@@ -1,0 +1,25 @@
+{% extends 'ghosts/_base.html' %}
+
+{% block banner %}
+Select your ghost
+{% endblock %}
+
+{% block content %}
+  <form method="POST" action="/confirm/">
+    {% csrf_token %}
+    <input type="hidden" name="first-name" value="{{ first_name }}">
+    <input type="hidden" name="last-name" value="{{ last_name }}">
+    <ul class="list">
+      {% for ghost in ghosts %}
+        <li class="list__item">
+          <div class="list__content">
+            <h2>{{ first_name }} "{{ ghost.name }}" {{ last_name }}</h2>
+            <p class="subtitle">{{ ghost.origin }}</p>
+            <p>{{ ghost.description }}</p>
+            <button class="button" type="submit" name="ghost" value="{{ ghost.id }}">Select me!</button>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </form>
+{% endblock %}
