@@ -8,7 +8,7 @@ All ghosts
   <ul class="list">
     {% for ghost in ghosts %}
       <li class="list__item">
-        <div class="list__content">
+        <div class="list__content{% if ghost.user %} list__content--inverted{% endif %}">
           {% if ghost.user %}
             <h2>{{ ghost.first_name }} "{{ ghost.name }}" {{ ghost.last_name }}</h2>
           {% else %}

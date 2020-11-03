@@ -40,7 +40,7 @@ body {
   padding: 0.5rem 1rem;
 }
 
-.list__item--taken {
+.list__content--inverted {
   background-color: #00fdc7;
   color: #000;
 }
