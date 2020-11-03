@@ -109,6 +109,8 @@ I have manually entered some ghosts into the Django admin but I have included a 
 
 I wrote very simple CSS for this set of pages using what I think of as a "loosely [BEM](http://getbem.com/)" style but I would push for much more structure and a common language for design elements. I would consider using a preprocessor like Sass if the CSS got any more complicated to take advantage of time and complexity saving features.
 
+I have stuck to using reletively-established CSS techniques with support across all modern browsers but I would like to do extensive browser testing and would tailor any CSS in a real project to the target broswer support matrix and use backwards-compatibility tools if required.
+
 Of course, there are many existing styling frameworks available and choice of styling would be influenced by such frameworks already in use by or endosed by the team or clients.
 
 ### JavaScript
